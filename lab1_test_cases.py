@@ -22,9 +22,11 @@ class TestLab1(unittest.TestCase):
     def test_max_list_iter_positive_and_negative_list(self):
         self.assertEqual(max_list_iter([-5,4,2,0,-26]), 4)
 
+    def test_max_list_iter_empty_list(self):
+        self.assertEqual(max_list_iter([]), None)
+
     """Testing recursive function to reverse the input list"""
     def test_reverse_rec_ValueError(self):
-
        tlist = None
        with self.assertRaises(ValueError):  # used to check for exception
             reverse_rec(tlist)
@@ -46,6 +48,11 @@ class TestLab1(unittest.TestCase):
         tlist = None
         with self.assertRaises(ValueError):  # used to check for exception
             max_list_iter(tlist)
+
+    def test_bin_search_regular_val(self):
+        list_val =[0,1,2,3,4,7,8,9,10]
+        self.assertEqual(bin_search(1, 0, len(list_val)-1, list_val), 1 )
+        self.assertEqual(bin_search(2, 0, len(list_val)-1, list_val), 2 )
 
     def test_bin_search_firstval(self):
         list_val =[0,1,2,3,4,7,8,9,10]
