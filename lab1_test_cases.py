@@ -51,8 +51,16 @@ class TestLab1(unittest.TestCase):
 
     def test_bin_search_regular_val(self):
         list_val =[0,1,2,3,4,7,8,9,10]
+        list_val2 =[0,21,37,99,402,709,724,902,1001,1002,1900,1903,2004,2019,2022,2201,2202,111111,9999999]
         self.assertEqual(bin_search(1, 0, len(list_val)-1, list_val), 1 )
-        self.assertEqual(bin_search(2, 0, len(list_val)-1, list_val), 2 )
+        self.assertEqual(bin_search(402, 0, len(list_val)-1, list_val2), 4 )
+        self.assertEqual(bin_search(709, 0, len(list_val)-1, list_val2), 5 )
+        self.assertEqual(bin_search(724, 0, len(list_val)-1, list_val2), 6 )
+        self.assertEqual(bin_search(902, 0, len(list_val)-1, list_val2), 7 )
+        self.assertEqual(bin_search(1001, 0, len(list_val)-1, list_val2), 8 )
+        self.assertEqual(bin_search(1002, 0, len(list_val2)-1, list_val2), 9 )
+        self.assertEqual(bin_search(111111, 0, len(list_val2)-1, list_val2), 17 )
+        self.assertEqual(bin_search(2022, 0, len(list_val2)-1, list_val2), 14 )       
 
     def test_bin_search_firstval(self):
         list_val =[0,1,2,3,4,7,8,9,10]
@@ -82,6 +90,8 @@ class TestLab1(unittest.TestCase):
         list_val = [1]
         self.assertEqual(bin_search(1, 0, len(list_val)-1, list_val), 0 )
         self.assertEqual(bin_search(2, 0, len(list_val)-1, list_val), None )
+
+
 
 
 
